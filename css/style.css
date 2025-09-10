@@ -11,7 +11,9 @@ html {
 }
 
 body {
-  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3",
+    Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6em;
@@ -313,13 +315,13 @@ a img.aligncenter {
 
 .nav-header__logo {
   font-weight: 700;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   display: flex;
   align-items: center;
   margin-right: auto;
   color: #222222;
   font-weight: 700;
-  font-size: 2.0rem;
+  font-size: 2rem;
 }
 
 .nav-header__logo-image {
@@ -400,7 +402,8 @@ a img.aligncenter {
   text-align: center;
   outline: none;
   cursor: pointer;
-  transition: box-shadow .2s, text-shadow .2s, background-color .2s,  border-color .2s, opacity .2s;
+  transition: box-shadow 0.2s, text-shadow 0.2s, background-color 0.2s,
+    border-color 0.2s, opacity 0.2s;
   background-color: #08aeb0;
   color: #ffffff;
   margin-left: 1.6rem;
@@ -545,7 +548,8 @@ a img.aligncenter {
   cursor: pointer;
 }
 
-.nav-drawer__button-close:hover, .nav-drawer__button-close:focus {
+.nav-drawer__button-close:hover,
+.nav-drawer__button-close:focus {
   outline: none;
   background: #09c6c8;
 }
@@ -624,7 +628,7 @@ a img.aligncenter {
 
 .nav-pagetop:before {
   display: block;
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -641,7 +645,7 @@ a img.aligncenter {
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   content: "\e5ce";
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -651,7 +655,7 @@ a img.aligncenter {
 }
 
 .nav-pagetop:after {
-  content: 'PAGETOP';
+  content: "PAGETOP";
   display: block;
   padding: 4px 0px;
 }
@@ -667,7 +671,7 @@ a img.aligncenter {
 
 .mainvisual {
   position: relative;
-  background-image: url("../img/mainvisual.jpg");
+  background-image: url("../img/samplekv.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -701,9 +705,9 @@ a img.aligncenter {
 
 .mainvisual__text-main {
   font-weight: 700;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   font-weight: 700;
-  font-size: 4.0rem;
+  font-size: 4rem;
   line-height: 1;
 }
 
@@ -725,7 +729,7 @@ a img.aligncenter {
   margin: 0;
   padding-top: calc(6rem + 6.4rem);
   padding-bottom: 6.4rem;
-  background-image: url("../img/mainvisual.jpg");
+  background-image: url("../img/samplekv.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -763,7 +767,7 @@ a img.aligncenter {
 
 .pagevisual__text-main {
   font-weight: 700;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   font-size: 3.2rem;
 }
 
@@ -805,8 +809,8 @@ a img.aligncenter {
 
 .page-heading__text-main {
   font-weight: 700;
-  font-family: 'Comfortaa', cursive;
-  font-size: 4.0rem;
+  font-family: "Comfortaa", cursive;
+  font-size: 4rem;
 }
 
 .page-heading__text-main:after {
@@ -876,7 +880,7 @@ a img.aligncenter {
   vertical-align: middle;
   width: 6px;
   height: 1.6em;
-  margin-right: .8rem;
+  margin-right: 0.8rem;
   border-radius: 3px;
   background: #08aeb0;
   content: "";
@@ -921,7 +925,8 @@ a img.aligncenter {
   transition: all 0.2s;
 }
 
-.footer__menu-item-link:hover, .footer__menu-item-link:focus {
+.footer__menu-item-link:hover,
+.footer__menu-item-link:focus {
   text-decoration: underline;
 }
 
@@ -970,7 +975,14 @@ a img.aligncenter {
   margin: 0 auto;
 }
 
-.photo-modal .photo-modal__button, .photo-modal .photo-modal__button--close, .photo-modal .photo-modal__button--prev, .photo-modal .photo-modal__button--next, .photo-modal .button-detail__button, .photo-modal .button-detail__button--back, .photo-modal .button-detail__button--prev, .photo-modal .button-detail__button--next {
+.photo-modal .photo-modal__button,
+.photo-modal .photo-modal__button--close,
+.photo-modal .photo-modal__button--prev,
+.photo-modal .photo-modal__button--next,
+.photo-modal .button-detail__button,
+.photo-modal .button-detail__button--back,
+.photo-modal .button-detail__button--prev,
+.photo-modal .button-detail__button--next {
   position: absolute;
   width: 4rem;
   height: 4rem;
@@ -986,12 +998,34 @@ a img.aligncenter {
   appearance: none;
 }
 
-.photo-modal .photo-modal__button:hover, .photo-modal .photo-modal__button--close:hover, .photo-modal .photo-modal__button--prev:hover, .photo-modal .photo-modal__button--next:hover, .photo-modal .button-detail__button:hover, .photo-modal .button-detail__button--back:hover, .photo-modal .button-detail__button--prev:hover, .photo-modal .button-detail__button--next:hover, .photo-modal .photo-modal__button:focus, .photo-modal .photo-modal__button--close:focus, .photo-modal .photo-modal__button--prev:focus, .photo-modal .photo-modal__button--next:focus, .photo-modal .button-detail__button:focus, .photo-modal .button-detail__button--back:focus, .photo-modal .button-detail__button--prev:focus, .photo-modal .button-detail__button--next:focus {
+.photo-modal .photo-modal__button:hover,
+.photo-modal .photo-modal__button--close:hover,
+.photo-modal .photo-modal__button--prev:hover,
+.photo-modal .photo-modal__button--next:hover,
+.photo-modal .button-detail__button:hover,
+.photo-modal .button-detail__button--back:hover,
+.photo-modal .button-detail__button--prev:hover,
+.photo-modal .button-detail__button--next:hover,
+.photo-modal .photo-modal__button:focus,
+.photo-modal .photo-modal__button--close:focus,
+.photo-modal .photo-modal__button--prev:focus,
+.photo-modal .photo-modal__button--next:focus,
+.photo-modal .button-detail__button:focus,
+.photo-modal .button-detail__button--back:focus,
+.photo-modal .button-detail__button--prev:focus,
+.photo-modal .button-detail__button--next:focus {
   color: #f2f2f2;
   outline: none;
 }
 
-.photo-modal .photo-modal__button::before, .photo-modal .photo-modal__button--close::before, .photo-modal .photo-modal__button--prev::before, .photo-modal .photo-modal__button--next::before, .photo-modal .button-detail__button::before, .photo-modal .button-detail__button--back::before, .photo-modal .button-detail__button--prev::before, .photo-modal .button-detail__button--next::before {
+.photo-modal .photo-modal__button::before,
+.photo-modal .photo-modal__button--close::before,
+.photo-modal .photo-modal__button--prev::before,
+.photo-modal .photo-modal__button--next::before,
+.photo-modal .button-detail__button::before,
+.photo-modal .button-detail__button--back::before,
+.photo-modal .button-detail__button--prev::before,
+.photo-modal .button-detail__button--next::before {
   font-size: 2.5rem;
 }
 
@@ -1001,7 +1035,7 @@ a img.aligncenter {
 }
 
 .photo-modal__button--close::before {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -1018,7 +1052,7 @@ a img.aligncenter {
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   content: "\e5cd";
 }
 
@@ -1028,7 +1062,7 @@ a img.aligncenter {
 }
 
 .photo-modal__button--prev::before {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -1045,7 +1079,7 @@ a img.aligncenter {
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   content: "\e5cb";
 }
 
@@ -1055,7 +1089,7 @@ a img.aligncenter {
 }
 
 .photo-modal__button--next::before {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -1072,7 +1106,7 @@ a img.aligncenter {
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   content: "\e5cc";
 }
 
@@ -1097,7 +1131,8 @@ a img.aligncenter {
   text-align: center;
   outline: none;
   cursor: pointer;
-  transition: box-shadow .2s, text-shadow .2s, background-color .2s,  border-color .2s, opacity .2s;
+  transition: box-shadow 0.2s, text-shadow 0.2s, background-color 0.2s,
+    border-color 0.2s, opacity 0.2s;
   display: flex;
   width: 100%;
   max-width: 60rem;
@@ -1111,7 +1146,8 @@ a img.aligncenter {
   font-size: 1.6rem;
 }
 
-.button-guide:hover, .button-guide:focus {
+.button-guide:hover,
+.button-guide:focus {
   background: #08aeb0;
   color: #ffffff;
 }
@@ -1123,7 +1159,14 @@ a img.aligncenter {
   margin: 0 auto;
 }
 
-.button-detail .photo-modal__button, .button-detail .photo-modal__button--close, .button-detail .photo-modal__button--prev, .button-detail .photo-modal__button--next, .button-detail .button-detail__button, .button-detail .button-detail__button--back, .button-detail .button-detail__button--prev, .button-detail .button-detail__button--next {
+.button-detail .photo-modal__button,
+.button-detail .photo-modal__button--close,
+.button-detail .photo-modal__button--prev,
+.button-detail .photo-modal__button--next,
+.button-detail .button-detail__button,
+.button-detail .button-detail__button--back,
+.button-detail .button-detail__button--prev,
+.button-detail .button-detail__button--next {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1134,7 +1177,8 @@ a img.aligncenter {
   text-align: center;
   outline: none;
   cursor: pointer;
-  transition: box-shadow .2s, text-shadow .2s, background-color .2s,  border-color .2s, opacity .2s;
+  transition: box-shadow 0.2s, text-shadow 0.2s, background-color 0.2s,
+    border-color 0.2s, opacity 0.2s;
   margin-bottom: 2.4rem;
   padding: 1.6rem 2.4rem;
   border-radius: 0.4rem;
@@ -1142,7 +1186,22 @@ a img.aligncenter {
   color: #222222;
 }
 
-.button-detail .photo-modal__button:hover, .button-detail .photo-modal__button--close:hover, .button-detail .photo-modal__button--prev:hover, .button-detail .photo-modal__button--next:hover, .button-detail .button-detail__button:hover, .button-detail .button-detail__button--back:hover, .button-detail .button-detail__button--prev:hover, .button-detail .button-detail__button--next:hover, .button-detail .photo-modal__button:focus, .button-detail .photo-modal__button--close:focus, .button-detail .photo-modal__button--prev:focus, .button-detail .photo-modal__button--next:focus, .button-detail .button-detail__button:focus, .button-detail .button-detail__button--back:focus, .button-detail .button-detail__button--prev:focus, .button-detail .button-detail__button--next:focus {
+.button-detail .photo-modal__button:hover,
+.button-detail .photo-modal__button--close:hover,
+.button-detail .photo-modal__button--prev:hover,
+.button-detail .photo-modal__button--next:hover,
+.button-detail .button-detail__button:hover,
+.button-detail .button-detail__button--back:hover,
+.button-detail .button-detail__button--prev:hover,
+.button-detail .button-detail__button--next:hover,
+.button-detail .photo-modal__button:focus,
+.button-detail .photo-modal__button--close:focus,
+.button-detail .photo-modal__button--prev:focus,
+.button-detail .photo-modal__button--next:focus,
+.button-detail .button-detail__button:focus,
+.button-detail .button-detail__button--back:focus,
+.button-detail .button-detail__button--prev:focus,
+.button-detail .button-detail__button--next:focus {
   background: #08aeb0;
   color: #ffffff;
 }
@@ -1152,7 +1211,7 @@ a img.aligncenter {
 }
 
 .button-detail__button--back:before {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -1169,7 +1228,7 @@ a img.aligncenter {
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   content: "\e896";
   margin-right: 0.8rem;
 }
@@ -1186,7 +1245,7 @@ a img.aligncenter {
 }
 
 .button-detail__button--prev:before {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -1203,7 +1262,7 @@ a img.aligncenter {
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   content: "\e5cb";
   margin-right: 0.8rem;
 }
@@ -1220,7 +1279,7 @@ a img.aligncenter {
 }
 
 .button-detail__button--next:after {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -1237,7 +1296,7 @@ a img.aligncenter {
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   content: "\e5cc";
   margin-left: 0.8rem;
 }
@@ -1258,9 +1317,11 @@ a img.aligncenter {
 }
 
 .pagination .pagination__link,
-.pagination .page-numbers > li > a, .pagination .pagination__link--prev,
+.pagination .page-numbers > li > a,
+.pagination .pagination__link--prev,
 .pagination .page-numbers > li > a--prev,
-.pagination .page-numbers > li > a.prev, .pagination .pagination__link--next,
+.pagination .page-numbers > li > a.prev,
+.pagination .pagination__link--next,
 .pagination .page-numbers > li > a--next,
 .pagination .page-numbers > li > a.next {
   -webkit-transition: background-color 0.2s;
@@ -1286,14 +1347,16 @@ a img.aligncenter {
   color: #222222;
 }
 
-.pagination__link:hover, .pagination__link:focus,
+.pagination__link:hover,
+.pagination__link:focus,
 .pagination .page-numbers > li > a:hover,
 .pagination .page-numbers > li > a:focus {
   background-color: #08aeb0;
   color: #ffffff;
 }
 
-.pagination__link--prev, .pagination__link.prev,
+.pagination__link--prev,
+.pagination__link.prev,
 .pagination .page-numbers > li > a--prev,
 .pagination .page-numbers > li > a.prev {
   min-width: 12rem;
@@ -1301,10 +1364,11 @@ a img.aligncenter {
   color: #222222;
 }
 
-.pagination__link--prev:before, .pagination__link.prev:before,
+.pagination__link--prev:before,
+.pagination__link.prev:before,
 .pagination .page-numbers > li > a--prev:before,
 .pagination .page-numbers > li > a.prev:before {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -1321,14 +1385,17 @@ a img.aligncenter {
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   content: "\e5cb";
   display: inline-block;
   margin-right: 0.6rem;
   transition: transform 0.2s;
 }
 
-.pagination__link--prev:hover, .pagination__link--prev:focus, .pagination__link.prev:hover, .pagination__link.prev:focus,
+.pagination__link--prev:hover,
+.pagination__link--prev:focus,
+.pagination__link.prev:hover,
+.pagination__link.prev:focus,
 .pagination .page-numbers > li > a--prev:hover,
 .pagination .page-numbers > li > a--prev:focus,
 .pagination .page-numbers > li > a.prev:hover,
@@ -1337,7 +1404,10 @@ a img.aligncenter {
   color: #ffffff;
 }
 
-.pagination__link--prev:hover:before, .pagination__link--prev:focus:before, .pagination__link.prev:hover:before, .pagination__link.prev:focus:before,
+.pagination__link--prev:hover:before,
+.pagination__link--prev:focus:before,
+.pagination__link.prev:hover:before,
+.pagination__link.prev:focus:before,
 .pagination .page-numbers > li > a--prev:hover:before,
 .pagination .page-numbers > li > a--prev:focus:before,
 .pagination .page-numbers > li > a.prev:hover:before,
@@ -1345,7 +1415,8 @@ a img.aligncenter {
   transform: translateX(-4px);
 }
 
-.pagination__link--next, .pagination__link.next,
+.pagination__link--next,
+.pagination__link.next,
 .pagination .page-numbers > li > a--next,
 .pagination .page-numbers > li > a.next {
   min-width: 12rem;
@@ -1353,10 +1424,11 @@ a img.aligncenter {
   color: #222222;
 }
 
-.pagination__link--next:after, .pagination__link.next:after,
+.pagination__link--next:after,
+.pagination__link.next:after,
 .pagination .page-numbers > li > a--next:after,
 .pagination .page-numbers > li > a.next:after {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -1373,14 +1445,17 @@ a img.aligncenter {
   /* Support for Firefox. */
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   content: "\e5cc";
   display: inline-block;
   margin-left: 0.6rem;
   transition: transform 0.2s;
 }
 
-.pagination__link--next:hover, .pagination__link--next:focus, .pagination__link.next:hover, .pagination__link.next:focus,
+.pagination__link--next:hover,
+.pagination__link--next:focus,
+.pagination__link.next:hover,
+.pagination__link.next:focus,
 .pagination .page-numbers > li > a--next:hover,
 .pagination .page-numbers > li > a--next:focus,
 .pagination .page-numbers > li > a.next:hover,
@@ -1389,7 +1464,10 @@ a img.aligncenter {
   color: #ffffff;
 }
 
-.pagination__link--next:hover:after, .pagination__link--next:focus:after, .pagination__link.next:hover:after, .pagination__link.next:focus:after,
+.pagination__link--next:hover:after,
+.pagination__link--next:focus:after,
+.pagination__link.next:hover:after,
+.pagination__link.next:focus:after,
 .pagination .page-numbers > li > a--next:hover:after,
 .pagination .page-numbers > li > a--next:focus:after,
 .pagination .page-numbers > li > a.next:hover:after,
@@ -1398,9 +1476,11 @@ a img.aligncenter {
 }
 
 .pagination .pagination__text,
-.pagination .page-numbers > li > span, .pagination .pagination__text--current,
+.pagination .page-numbers > li > span,
+.pagination .pagination__text--current,
 .pagination .page-numbers > li > span--current,
-.pagination .page-numbers > li > span.current, .pagination .pagination__text--dots,
+.pagination .page-numbers > li > span.current,
+.pagination .pagination__text--dots,
 .pagination .page-numbers > li > span--dots,
 .pagination .page-numbers > li > span.dots {
   display: flex;
@@ -1420,14 +1500,16 @@ a img.aligncenter {
   color: #222222;
 }
 
-.pagination__text--current, .pagination__text.current,
+.pagination__text--current,
+.pagination__text.current,
 .pagination .page-numbers > li > span--current,
 .pagination .page-numbers > li > span.current {
   background-color: #08aeb0;
   color: #ffffff;
 }
 
-.pagination__text--dots, .pagination__text.dots,
+.pagination__text--dots,
+.pagination__text.dots,
 .pagination .page-numbers > li > span--dots,
 .pagination .page-numbers > li > span.dots {
   background-color: #eeeeee;
@@ -1463,7 +1545,9 @@ a img.aligncenter {
   }
 }
 
-.form .form__label, .form .form__label--itemname, .form .form__label--required {
+.form .form__label,
+.form .form__label--itemname,
+.form .form__label--required {
   display: inline-block;
   font-weight: 400;
   line-height: 1;
@@ -1493,13 +1577,29 @@ a img.aligncenter {
   margin-bottom: 0.6rem;
 }
 
-.form .form__input, .form .form__input--text, .form .form__input--text-half, .form .form__input--textarea, .form .form__input--textarea-half, .form .form__input--select, .form .form__input--radio, .form .form__input--check {
+.form .form__input,
+.form .form__input--text,
+.form .form__input--text-half,
+.form .form__input--textarea,
+.form .form__input--textarea-half,
+.form .form__input--select,
+.form .form__input--radio,
+.form .form__input--check {
   position: relative;
   width: 100%;
   padding: 0.4rem;
 }
 
-.form .form__input--text input, .form__input--text .form input, .form .form__input--text-half input, .form__input--text-half .form input, .form .form__input--textarea textarea, .form__input--textarea .form textarea, .form .form__input--textarea-half textarea, .form__input--textarea-half .form textarea, .form .form__input--select select, .form__input--select .form select {
+.form .form__input--text input,
+.form__input--text .form input,
+.form .form__input--text-half input,
+.form__input--text-half .form input,
+.form .form__input--textarea textarea,
+.form__input--textarea .form textarea,
+.form .form__input--textarea-half textarea,
+.form__input--textarea-half .form textarea,
+.form .form__input--select select,
+.form__input--select .form select {
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -1517,37 +1617,85 @@ a img.aligncenter {
   /* IE対応 */
 }
 
-.form .form__input--text input::-ms-expand, .form__input--text .form input::-ms-expand, .form .form__input--text-half input::-ms-expand, .form__input--text-half .form input::-ms-expand, .form .form__input--textarea textarea::-ms-expand, .form__input--textarea .form textarea::-ms-expand, .form .form__input--textarea-half textarea::-ms-expand, .form__input--textarea-half .form textarea::-ms-expand, .form .form__input--select select::-ms-expand, .form__input--select .form select::-ms-expand {
+.form .form__input--text input::-ms-expand,
+.form__input--text .form input::-ms-expand,
+.form .form__input--text-half input::-ms-expand,
+.form__input--text-half .form input::-ms-expand,
+.form .form__input--textarea textarea::-ms-expand,
+.form__input--textarea .form textarea::-ms-expand,
+.form .form__input--textarea-half textarea::-ms-expand,
+.form__input--textarea-half .form textarea::-ms-expand,
+.form .form__input--select select::-ms-expand,
+.form__input--select .form select::-ms-expand {
   display: none;
 }
 
-.form .form__input--text input::placeholder, .form__input--text .form input::placeholder, .form .form__input--text-half input::placeholder, .form__input--text-half .form input::placeholder, .form .form__input--textarea textarea::placeholder, .form__input--textarea .form textarea::placeholder, .form .form__input--textarea-half textarea::placeholder, .form__input--textarea-half .form textarea::placeholder, .form .form__input--select select::placeholder, .form__input--select .form select::placeholder {
+.form .form__input--text input::placeholder,
+.form__input--text .form input::placeholder,
+.form .form__input--text-half input::placeholder,
+.form__input--text-half .form input::placeholder,
+.form .form__input--textarea textarea::placeholder,
+.form__input--textarea .form textarea::placeholder,
+.form .form__input--textarea-half textarea::placeholder,
+.form__input--textarea-half .form textarea::placeholder,
+.form .form__input--select select::placeholder,
+.form__input--select .form select::placeholder {
   color: #cccccc;
 }
 
-.form .form__input--text input::-ms-input-placeholder, .form__input--text .form input::-ms-input-placeholder, .form .form__input--text-half input::-ms-input-placeholder, .form__input--text-half .form input::-ms-input-placeholder, .form .form__input--textarea textarea::-ms-input-placeholder, .form__input--textarea .form textarea::-ms-input-placeholder, .form .form__input--textarea-half textarea::-ms-input-placeholder, .form__input--textarea-half .form textarea::-ms-input-placeholder, .form .form__input--select select::-ms-input-placeholder, .form__input--select .form select::-ms-input-placeholder {
+.form .form__input--text input::-ms-input-placeholder,
+.form__input--text .form input::-ms-input-placeholder,
+.form .form__input--text-half input::-ms-input-placeholder,
+.form__input--text-half .form input::-ms-input-placeholder,
+.form .form__input--textarea textarea::-ms-input-placeholder,
+.form__input--textarea .form textarea::-ms-input-placeholder,
+.form .form__input--textarea-half textarea::-ms-input-placeholder,
+.form__input--textarea-half .form textarea::-ms-input-placeholder,
+.form .form__input--select select::-ms-input-placeholder,
+.form__input--select .form select::-ms-input-placeholder {
   color: #cccccc;
 }
 
-.form .form__input--text input:-ms-input-placeholder, .form__input--text .form input:-ms-input-placeholder, .form .form__input--text-half input:-ms-input-placeholder, .form__input--text-half .form input:-ms-input-placeholder, .form .form__input--textarea textarea:-ms-input-placeholder, .form__input--textarea .form textarea:-ms-input-placeholder, .form .form__input--textarea-half textarea:-ms-input-placeholder, .form__input--textarea-half .form textarea:-ms-input-placeholder, .form .form__input--select select:-ms-input-placeholder, .form__input--select .form select:-ms-input-placeholder {
+.form .form__input--text input:-ms-input-placeholder,
+.form__input--text .form input:-ms-input-placeholder,
+.form .form__input--text-half input:-ms-input-placeholder,
+.form__input--text-half .form input:-ms-input-placeholder,
+.form .form__input--textarea textarea:-ms-input-placeholder,
+.form__input--textarea .form textarea:-ms-input-placeholder,
+.form .form__input--textarea-half textarea:-ms-input-placeholder,
+.form__input--textarea-half .form textarea:-ms-input-placeholder,
+.form .form__input--select select:-ms-input-placeholder,
+.form__input--select .form select:-ms-input-placeholder {
   color: #cccccc;
 }
 
-.form .form__input--text input, .form__input--text .form input, .form .form__input--text-half input, .form__input--text-half .form input {
+.form .form__input--text input,
+.form__input--text .form input,
+.form .form__input--text-half input,
+.form__input--text-half .form input {
   padding: 0.8rem 1.6rem;
   transition: border-color 0.4s;
 }
 
-.form .form__input--text input:focus, .form__input--text .form input:focus, .form .form__input--text-half input:focus, .form__input--text-half .form input:focus {
+.form .form__input--text input:focus,
+.form__input--text .form input:focus,
+.form .form__input--text-half input:focus,
+.form__input--text-half .form input:focus {
   border: 2px solid #08aeb0;
 }
 
-.form .form__input--textarea textarea, .form__input--textarea .form textarea, .form .form__input--textarea-half textarea, .form__input--textarea-half .form textarea {
+.form .form__input--textarea textarea,
+.form__input--textarea .form textarea,
+.form .form__input--textarea-half textarea,
+.form__input--textarea-half .form textarea {
   padding: 1.6rem;
   transition: border-color 0.4s;
 }
 
-.form .form__input--textarea textarea:focus, .form__input--textarea .form textarea:focus, .form .form__input--textarea-half textarea:focus, .form__input--textarea-half .form textarea:focus {
+.form .form__input--textarea textarea:focus,
+.form__input--textarea .form textarea:focus,
+.form .form__input--textarea-half textarea:focus,
+.form__input--textarea-half .form textarea:focus {
   border: 2px solid #08aeb0;
 }
 
@@ -1720,13 +1868,13 @@ a img.aligncenter {
 
 .table-overview tr th {
   width: 16rem;
-  padding: .8rem;
+  padding: 0.8rem;
   vertical-align: top;
 }
 
 .table-overview tr td {
   width: calc(100% - 16rem);
-  padding: .8rem 1.6rem;
+  padding: 0.8rem 1.6rem;
   vertical-align: top;
 }
 
@@ -1813,15 +1961,35 @@ a img.aligncenter {
   font-size: 1.6rem;
 }
 
-.skillset .skillset__content-bar, .skillset .skillset__content-bar--10, .skillset .skillset__content-bar--20, .skillset .skillset__content-bar--30, .skillset .skillset__content-bar--40, .skillset .skillset__content-bar--50, .skillset .skillset__content-bar--60, .skillset .skillset__content-bar--70, .skillset .skillset__content-bar--80, .skillset .skillset__content-bar--90, .skillset .skillset__content-bar--100 {
+.skillset .skillset__content-bar,
+.skillset .skillset__content-bar--10,
+.skillset .skillset__content-bar--20,
+.skillset .skillset__content-bar--30,
+.skillset .skillset__content-bar--40,
+.skillset .skillset__content-bar--50,
+.skillset .skillset__content-bar--60,
+.skillset .skillset__content-bar--70,
+.skillset .skillset__content-bar--80,
+.skillset .skillset__content-bar--90,
+.skillset .skillset__content-bar--100 {
   height: 1.6rem;
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   overflow: hidden;
   border-radius: 0.8rem;
   box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.1);
 }
 
-.skillset .skillset__content-bar::after, .skillset .skillset__content-bar--10::after, .skillset .skillset__content-bar--20::after, .skillset .skillset__content-bar--30::after, .skillset .skillset__content-bar--40::after, .skillset .skillset__content-bar--50::after, .skillset .skillset__content-bar--60::after, .skillset .skillset__content-bar--70::after, .skillset .skillset__content-bar--80::after, .skillset .skillset__content-bar--90::after, .skillset .skillset__content-bar--100::after {
+.skillset .skillset__content-bar::after,
+.skillset .skillset__content-bar--10::after,
+.skillset .skillset__content-bar--20::after,
+.skillset .skillset__content-bar--30::after,
+.skillset .skillset__content-bar--40::after,
+.skillset .skillset__content-bar--50::after,
+.skillset .skillset__content-bar--60::after,
+.skillset .skillset__content-bar--70::after,
+.skillset .skillset__content-bar--80::after,
+.skillset .skillset__content-bar--90::after,
+.skillset .skillset__content-bar--100::after {
   display: block;
   height: 1.6rem;
   border-radius: 0.8rem;
@@ -1876,7 +2044,7 @@ a img.aligncenter {
 
 .about-definition__term {
   width: 40%;
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
   font-weight: 700;
   font-size: 1.6rem;
 }
@@ -1887,7 +2055,7 @@ a img.aligncenter {
 
 .about-definition__description {
   width: 60%;
-  margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
   font-size: 1.6rem;
   text-align: right;
 }
@@ -1980,7 +2148,9 @@ a img.aligncenter {
 }
 
 @media screen and (min-width: 992px) {
-  .top-concept .top-concept__layout, .top-concept .top-concept__layout--left, .top-concept .top-concept__layout--right {
+  .top-concept .top-concept__layout,
+  .top-concept .top-concept__layout--left,
+  .top-concept .top-concept__layout--right {
     display: flex;
   }
 }
@@ -2044,7 +2214,7 @@ a img.aligncenter {
   margin-left: 3.6rem;
   padding: 3.6rem 0;
   color: #222222;
-  transition: padding-left .2s;
+  transition: padding-left 0.2s;
 }
 
 .top-concept__link::before {
@@ -2059,11 +2229,13 @@ a img.aligncenter {
   content: "";
 }
 
-.top-concept__link:hover, .top-concept__link:focus {
-  padding-left: .4rem;
+.top-concept__link:hover,
+.top-concept__link:focus {
+  padding-left: 0.4rem;
 }
 
-.top-concept__link:hover::before, .top-concept__link:focus::before {
+.top-concept__link:hover::before,
+.top-concept__link:focus::before {
   background: #07a0a1;
 }
 
@@ -2256,7 +2428,7 @@ a img.aligncenter {
 
 .contact-guide__heading-main {
   font-weight: 700;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   font-size: 4.8rem;
 }
 
@@ -2296,7 +2468,8 @@ a img.aligncenter {
   text-align: center;
   outline: none;
   cursor: pointer;
-  transition: box-shadow .2s, text-shadow .2s, background-color .2s,  border-color .2s, opacity .2s;
+  transition: box-shadow 0.2s, text-shadow 0.2s, background-color 0.2s,
+    border-color 0.2s, opacity 0.2s;
   width: 100%;
   max-width: 600px;
   padding: 1.6rem;
@@ -2360,7 +2533,8 @@ a img.aligncenter {
   text-align: center;
   outline: none;
   cursor: pointer;
-  transition: box-shadow .2s, text-shadow .2s, background-color .2s,  border-color .2s, opacity .2s;
+  transition: box-shadow 0.2s, text-shadow 0.2s, background-color 0.2s,
+    border-color 0.2s, opacity 0.2s;
   background: #08aeb0;
   padding: 1em 3em;
   color: #fff;
@@ -2375,6 +2549,7 @@ a img.aligncenter {
   }
 }
 
-.contact-form__button-submit:hover, .contact-form__button-submit:focus {
+.contact-form__button-submit:hover,
+.contact-form__button-submit:focus {
   background: #079698;
 }
