@@ -618,9 +618,14 @@ a img.aligncenter {
 .mainvisual {
   position: relative;
   background-image: url("../img/kemo_re.png");
-  background-position: center;
+  background-position: 17% 0%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media screen and (min-width: 992px) {
+  .mainvisual {
+    background-position: center;
+  }
 }
 .mainvisual::before {
   display: block;
@@ -639,7 +644,7 @@ a img.aligncenter {
   justify-content: center;
   align-items: center;
   max-width: 1140px;
-  height: 80vh;
+  height: 70vh;
   padding-top: 6rem;
   margin: 0 auto;
   text-align: center;
@@ -1714,8 +1719,11 @@ a img.aligncenter {
 }
 .works-item__thumbnail {
   overflow: hidden;
+  height: 270px;
+  object-position: 0% 50%;
 }
 .works-item__thumbnail-image {
+  object-fit: cover;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
@@ -1737,6 +1745,12 @@ a img.aligncenter {
   color: #3b2f2f;
   font-weight: 400;
   font-size: 1.6rem;
+  text-align: center;
+}
+.works-item__content-text {
+  color: #3b2f2f;
+  font-weight: 400;
+  font-size: 1rem;
   text-align: center;
 }
 .works-item:hover {

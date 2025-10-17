@@ -2,7 +2,10 @@
   position: relative;
   // 背景画像
   background-image: url("../img/kemo_re.png");
-  background-position: center;
+      @include responsive("pc") {
+        background-position: center;
+    }
+  background-position: 17% 0%;
   background-size: cover;
   background-repeat: no-repeat;
   // 背景画像に半透明のレイヤーを被せる
