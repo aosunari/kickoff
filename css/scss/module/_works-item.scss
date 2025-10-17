@@ -17,9 +17,10 @@
   &__thumbnail {
     overflow: hidden;
     height: 270px;
-    object-position: 0% 50%;
   }
   &__thumbnail-image {
+    width: 100%;
+    height: calc(45vh - 70px);
     object-fit: cover;
     @include transition();
     @include responsive_image();
