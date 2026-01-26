@@ -81,15 +81,15 @@ button {
 }
 
 .hero-bg:nth-child(1) {
-  background-image: url("./img/bg.webp");
+  background-image: url("../img/bg.webp");
 }
 
 .hero-bg:nth-child(2) {
-  background-image: url("./img/bg-two.webp");
+  background-image: url("../img/bg-two.webp");
 }
 
 .hero-bg:nth-child(3) {
-  background-image: url("./img/worksbg.webp");
+  background-image: url("../img/worksbg.webp");
 }
 
 .hero-bg.active {
