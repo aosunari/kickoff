@@ -16,8 +16,7 @@ function initHeroSlider() {
         });
     }
 
-    // 2秒ごとに切り替え
-    setInterval(changeBackground, 2000);
+    setInterval(changeBackground, 3500);
 }
 
 // 銘柄スライダー
