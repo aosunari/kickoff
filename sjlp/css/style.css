@@ -35,6 +35,22 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+.sp {
+  display: none;
+}
+
+.pc {
+  display: block;
+}
+@media (max-width: 768px) {
+  .sp {
+    display: block;
+  }
+  .pc {
+    display: none;
+  }
+}
+
 /* コンテナ */
 .container {
   max-width: 1200px;
@@ -197,8 +213,13 @@ section {
   max-width: 700px;
   margin: 0 auto 3rem;
   font-size: 0.95rem;
-
   line-height: 2.2;
+}
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 0.78rem;
+    /* text-align: left; */
+  }
 }
 
 .cta-button {
@@ -250,10 +271,10 @@ section {
 /* レスポンシブ */
 @media (max-width: 768px) {
   .story-text h3 {
-    font-size: 1.6vh;
+    font-size: 1.4rem;
   }
   .story-text p {
-    font-size: 1.2vh;
+    font-size: 0.85rem;
   }
 }
 
@@ -493,7 +514,7 @@ section {
   }
   .reason-card {
     padding: 25px;
-    min-height: 280px;
+    min-height: 300px;
     max-height: 350px;
   }
 
@@ -734,6 +755,10 @@ section {
   background: white;
 }
 
+.faq button {
+  color: #333;
+}
+
 .faq-list {
   max-width: 700px;
   margin: 0 auto;
@@ -825,7 +850,7 @@ footer {
   }
 
   .hero-subtitle {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .hero-text {
