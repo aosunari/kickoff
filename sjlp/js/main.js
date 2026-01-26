@@ -19,7 +19,7 @@ function initHeroSlider() {
     setInterval(changeBackground, 3500);
 }
 
-// 銘柄スライダー
+// 銘柄スライダー（スワイプ対応版）
 function initBrandSlider() {
     const slider = document.querySelector('.brand-slider');
     const slides = document.querySelectorAll('.brand-slide');
@@ -31,6 +31,12 @@ function initBrandSlider() {
     const totalSlides = slides.length;
     const slidesPerView = window.innerWidth > 768 ? 2 : 1;
     const maxSlide = totalSlides - slidesPerView;
+
+    // スワイプ用の変数
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let startTransform = 0;
 
     // ドットを作成
     function createDots() {
@@ -45,10 +51,15 @@ function initBrandSlider() {
         }
     }
 
-    // スライド移動（requestAnimationFrameを使用）
-    function updateSlider() {
+    // スライド移動
+    function updateSlider(smooth = true) {
         requestAnimationFrame(() => {
             const slideWidth = 100 / slidesPerView;
+            if (smooth) {
+                slider.style.transition = 'transform 0.5s ease';
+            } else {
+                slider.style.transition = 'none';
+            }
             slider.style.transform = `translateX(-${currentSlide * slideWidth}%) translateZ(0)`;
             updateDots();
         });
@@ -91,9 +102,65 @@ function initBrandSlider() {
         updateSlider();
     }
 
-    // イベントリスナー
+    // タッチスタート
+    function handleTouchStart(e) {
+        isDragging = true;
+        startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+        startTransform = currentSlide;
+        slider.style.transition = 'none';
+    }
+
+    // タッチムーブ
+    function handleTouchMove(e) {
+        if (!isDragging) return;
+
+        e.preventDefault();
+        currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+        const diff = startX - currentX;
+        const slideWidth = slider.offsetWidth / slidesPerView;
+        const movePercent = (diff / slideWidth) * 100 / slidesPerView;
+
+        requestAnimationFrame(() => {
+            const newTransform = -(startTransform * 100 / slidesPerView + movePercent);
+            slider.style.transform = `translateX(${newTransform}%) translateZ(0)`;
+        });
+    }
+
+    // タッチエンド
+    function handleTouchEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+
+        const diff = startX - currentX;
+        const threshold = 50; // スワイプ判定の閾値（ピクセル）
+
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0 && currentSlide < maxSlide) {
+                // 左スワイプ（次へ）
+                currentSlide++;
+            } else if (diff < 0 && currentSlide > 0) {
+                // 右スワイプ（前へ）
+                currentSlide--;
+            }
+        }
+
+        updateSlider();
+    }
+
+    // イベントリスナー（ボタン）
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
+
+    // イベントリスナー（スワイプ - タッチデバイス）
+    slider.addEventListener('touchstart', handleTouchStart, { passive: true });
+    slider.addEventListener('touchmove', handleTouchMove, { passive: false });
+    slider.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    // イベントリスナー（スワイプ - マウス）
+    slider.addEventListener('mousedown', handleTouchStart);
+    slider.addEventListener('mousemove', handleTouchMove);
+    slider.addEventListener('mouseup', handleTouchEnd);
+    slider.addEventListener('mouseleave', handleTouchEnd);
 
     // 初期化
     createDots();

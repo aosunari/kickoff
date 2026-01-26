@@ -58,7 +58,9 @@ button {
   padding: 0 20px;
 }
 
-/* ヒーローセクション */
+/* =====================
+KV(ヒーロー)セクション
+===================== */
 .hero {
   height: 100vh;
   position: relative;
@@ -180,7 +182,9 @@ button {
   transform: translate3d(0, 0, 0);
 }
 
-/* 共通セクション */
+/*=====================
+ 共通セクション
+ ===================== */
 section {
   padding: 80px 0;
   transform: translateZ(0);
@@ -208,7 +212,9 @@ section {
     font-size: 0.85rem;
   }
 }
-/* イントロセクション */
+/*=====================
+ イントロセクション
+ ===================== */
 .intro {
   background: white;
   text-align: center;
@@ -255,7 +261,9 @@ section {
   color: #999;
 }
 
-/* ストーリーセクション */
+/* =====================
+ストーリーセクション
+===================== */
 .story {
   background: white;
 }
@@ -276,11 +284,11 @@ section {
 /* レスポンシブ */
 @media (max-width: 768px) {
   .story-text h3 {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     letter-spacing: 0.1em;
   }
   .story-text p {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -301,7 +309,9 @@ section {
   object-fit: cover;
 }
 
-/* サービスセクション */
+/* =====================
+サービスセクション
+===================== */
 .services {
   background: #f9f9f9;
 }
@@ -383,7 +393,9 @@ section {
 }
 
 .service-list li::before {
-  content: "・";
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  font-weight: 900;
   position: absolute;
   left: 0;
 }
@@ -398,7 +410,10 @@ section {
   line-height: 1.7;
   color: #666;
 }
-/* 選ばれる理由セクション */
+
+/* =====================
+選ばれる理由セクション
+===================== */
 .reasons {
   background: white;
   position: relative;
@@ -533,7 +548,9 @@ section {
   }
 }
 
-/* 制作実績セクション */
+/* =====================
+制作実績セクション
+===================== */
 .brands {
   background: #f9f9f9;
 }
@@ -545,11 +562,17 @@ section {
 }
 
 .brand-slider {
-  display: flex;
-  transition: transform 0.5s ease;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  will-change: transform;
+    display: flex;
+    transition: transform 0.5s ease;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+    touch-action: pan-y pinch-zoom; /* 縦スクロールは許可 */
+    cursor: grab;
+}
+
+.brand-slider:active {
+    cursor: grabbing;
 }
 
 .brand-slide {
@@ -633,7 +656,9 @@ section {
 .slider-dot.active {
   background: #8b1c1c;
 }
-/* 料金セクション */
+/*=====================
+ 料金セクション
+ ===================== */
 .pricing {
   background: #f5f5f5;
   padding: 80px 0;
@@ -720,7 +745,9 @@ section {
   }
 }
 
-/* 注文の流れセクション */
+/*=====================
+ 制作の流れセクション
+ ===================== */
 .flow {
   background: #f9f9f9;
 }
@@ -756,7 +783,9 @@ section {
   line-height: 1.9;
 }
 
-/* FAQセクション */
+/*=====================
+FAQセクション
+===================== */
 .faq {
   background: white;
 }
