@@ -203,6 +203,11 @@ section {
   color: #666;
 }
 
+@media (max-width: 768px) {
+  .section-subtitle {
+    font-size: 0.85rem;
+  }
+}
 /* イントロセクション */
 .intro {
   background: white;
@@ -271,7 +276,8 @@ section {
 /* レスポンシブ */
 @media (max-width: 768px) {
   .story-text h3 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
+    letter-spacing: 0.1em;
   }
   .story-text p {
     font-size: 0.88rem;
@@ -514,7 +520,7 @@ section {
   }
   .reason-card {
     padding: 25px;
-    min-height: 300px;
+    min-height: 330px;
     max-height: 350px;
   }
 
