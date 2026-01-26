@@ -780,6 +780,8 @@ section {
   text-align: left;
   transition: color 0.3s ease;
   -webkit-tap-highlight-color: transparent;
+  color: #333;
+  -webkit-text-fill-color: #333;
 }
 
 .faq-question:hover {
