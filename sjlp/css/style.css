@@ -562,17 +562,17 @@ section {
 }
 
 .brand-slider {
-    display: flex;
-    transition: transform 0.5s ease;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    will-change: transform;
-    touch-action: pan-y pinch-zoom; /* 縦スクロールは許可 */
-    cursor: grab;
+  display: flex;
+  transition: transform 0.5s ease;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+  touch-action: pan-y pinch-zoom; /* 縦スクロールは許可 */
+  cursor: grab;
 }
 
 .brand-slider:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
 .brand-slide {
