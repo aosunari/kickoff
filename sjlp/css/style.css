@@ -627,14 +627,6 @@ section {
   right: 2px; /* コンテナの外に配置 */
 }
 
-/* .slider-nav.prev {
-  left: 10px;
-}
-
-.slider-nav.next {
-  right: 10px;
-} */
-
 /* コンテナに余裕を持たせる */
 .brands .container {
   max-width: 1320px; /* 少し広げる */
@@ -678,12 +670,11 @@ section {
   }
 
   .brand-image {
-    height: 450px; /* 適度なサイズ */
+    height: 350px;
   }
 
   .brand-image img {
-    max-width: fit-content;
-    max-height: 450px;
+    max-height: 350px;
   }
   .brand-name {
     font-size: 1rem;
