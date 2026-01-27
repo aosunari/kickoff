@@ -552,15 +552,10 @@ section {
 /* =====================
 制作実績セクション
 ===================== */
-.brands {
-  background: #f9f9f9;
-  padding: 80px 0; /* セクション全体の余白を確保 */
-}
-
 .brand-slider-wrapper {
   position: relative;
   overflow: hidden;
-  padding: 0;
+  padding: 0; /* 余白なし */
 }
 
 .brand-slider {
@@ -573,14 +568,14 @@ section {
 
 .brand-slide {
   min-width: 50%;
-  padding: 0 15px;
+  padding: 0; /* パディングを削除 */
 }
 
 .brand-card {
   background: white;
-  padding: 30px 20px; /* パディングを調整 */
+  padding: 20px; /* カード内部のパディングのみ */
   text-align: center;
-  height: 100%; /* カード全体の高さを確保 */
+  margin: 0 15px; /* 左右のマージンで調整 */
 }
 
 .brand-image {
@@ -607,16 +602,14 @@ section {
   font-size: 0.85rem;
   color: #666;
 }
-
-/* ナビボタン（画像の上に重ねる） */
 .slider-nav {
   position: absolute;
-  top: 45%; /* 画像の中央あたりに配置 */
+  top: 40%;
   transform: translateY(-50%) translateZ(0);
   -webkit-transform: translateY(-50%) translateZ(0);
-  background: rgba(157, 157, 157, 0.35); /* 少し濃く */
+  background: rgba(131, 131, 131, 0.265);
   color: white;
-  width: 45px; /* 少し大きく */
+  width: 50px;
   height: 45px;
   font-size: 1.8rem;
   transition: background 0.3s ease;
@@ -626,16 +619,30 @@ section {
   justify-content: center;
 }
 
-.slider-nav:hover {
-  background: rgba(0, 0, 0, 0.8);
+.slider-nav.prev {
+  left: 2px; /* コンテナの外に配置 */
 }
 
-.slider-nav.prev {
-  left: 10px; /* スライドの内側に配置 */
+.slider-nav.next {
+  right: 2px; /* コンテナの外に配置 */
+}
+
+/* .slider-nav.prev {
+  left: 10px;
 }
 
 .slider-nav.next {
   right: 10px;
+} */
+
+/* コンテナに余裕を持たせる */
+.brands .container {
+  max-width: 1320px; /* 少し広げる */
+  padding: 0 80px; /* 矢印の分の余白 */
+}
+
+.slider-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .slider-dots {
@@ -661,20 +668,19 @@ section {
 /* スマホ版 */
 @media (max-width: 768px) {
   .brand-slide {
-    padding: 0 10px; /* さらに余白を削減 */
+    min-width: 100%;
+    padding: 0;
   }
 
   .brand-card {
-    padding: 15px 10px; /* パディングを最小限に */
-    max-width: 450px;
-    width: 90%;
+    margin: 0 10px; /* SP版は狭く */
+    padding: 20px 10px;
   }
 
   .brand-image {
-    height: calc(100vh - 300px); /* 画面の高さに応じて調整 */
-    max-height: 500px; /* 最大700px */
-    margin-bottom: 15px;
+    height: 450px; /* 適度なサイズ */
   }
+
   .brand-image img {
     max-width: fit-content;
     max-height: 450px;
@@ -687,19 +693,18 @@ section {
     font-size: 0.8rem;
   }
 
-  .slider-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
-    top: 45%;
-  }
-
+  /* 矢印を画像の上に重ねる */
   .slider-nav.prev {
     left: 10px;
   }
 
   .slider-nav.next {
     right: 10px;
+  }
+
+  /* コンテナの余白を削除 */
+  .brands .container {
+    padding: 0 20px;
   }
 }
 /*=====================
