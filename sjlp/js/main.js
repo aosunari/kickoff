@@ -19,7 +19,7 @@ function initHeroSlider() {
     setInterval(changeBackground, 3500);
 }
 
-// 銘柄スライダー（スワイプ対応版）
+// 制作実績スライダー（スワイプ対応版）
 function initBrandSlider() {
     const slider = document.querySelector('.brand-slider');
     const slides = document.querySelectorAll('.brand-slide');

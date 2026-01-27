@@ -555,7 +555,10 @@ section {
 .brands {
   background: #f9f9f9;
 }
-
+.brands p.section-subtitle{
+  font-size: 0.8rem;
+  letter-spacing:0.05rem;
+}
 .brand-slider-wrapper {
   position: relative;
   overflow: hidden;
