@@ -112,10 +112,54 @@ function initBrandSlider() {
 
     // タッチムーブ
     function handleTouchMove(e) {
-        if (!isDragging) return;
+        // タッチムーブ（改善版）
+let initialMoveX = null;
+let initialMoveY = null;
+let isHorizontalSwipe = null;
 
-        e.preventDefault();
-        currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+function handleTouchStart(e) {
+    isDragging = true;
+    startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+    startTransform = currentSlide;
+
+    // 初期化
+    initialMoveX = null;
+    initialMoveY = null;
+    isHorizontalSwipe = null;
+}
+
+function handleTouchMove(e) {
+    if (!isDragging) return;
+
+    currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+    const currentY = e.type.includes('mouse') ? e.pageY : e.touches[0].pageY;
+
+    // 最初の移動で方向を判定
+    if (initialMoveX === null) {
+        initialMoveX = currentX;
+        initialMoveY = currentY;
+        return;
+    }
+
+    // 方向判定（一度だけ）
+    if (isHorizontalSwipe === null) {
+        const diffX = Math.abs(startX - currentX);
+        const diffY = Math.abs(e.touches[0].clientY - initialMoveY);
+
+        // 横移動が縦移動より大きければ横スワイプと判定
+        isHorizontalSwipe = diffX > diffY;
+
+        // 縦スクロールの場合はドラッグをキャンセル
+        if (!isHorizontalSwipe) {
+            isDragging = false;
+            return;
+        }
+    }
+
+    // 横スワイプの場合のみ処理
+    if (isHorizontalSwipe) {
+        e.preventDefault(); // 横スワイプ時のみスクロール防止
+
         const diff = startX - currentX;
         const slideWidth = slider.offsetWidth / slidesPerView;
         const movePercent = (diff / slideWidth) * 100 / slidesPerView;
@@ -124,6 +168,32 @@ function initBrandSlider() {
             const newTransform = -(startTransform * 100 / slidesPerView + movePercent);
             slider.style.transform = `translateX(${newTransform}%) translateZ(0)`;
         });
+    }
+}
+
+function handleTouchEnd(e) {
+    if (!isDragging) return;
+    isDragging = false;
+
+    // 横スワイプだった場合のみスライド切り替え
+    if (isHorizontalSwipe) {
+        const diff = startX - currentX;
+        const threshold = 50;
+
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0 && currentSlide < maxSlide) {
+                currentSlide++;
+            } else if (diff < 0 && currentSlide > 0) {
+                currentSlide--;
+            }
+        }
+    }
+
+    updateSlider();
+
+    // リセット
+    isHorizontalSwipe = null;
+}
     }
 
     // タッチエンド
