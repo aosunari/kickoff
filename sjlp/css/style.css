@@ -51,6 +51,51 @@ button {
   }
 }
 
+/* =====================
+ヘッダー
+===================== */
+#header {
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: rgba(239, 239, 239, 0.8);
+  -webkit-backdrop-filter: saturate(180%) blur(5px);
+          backdrop-filter: saturate(180%) blur(5px);
+  height: 3.3em;
+  line-height: 3em;
+  box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.09s;
+}
+#header h1 {
+  position: absolute;
+  left: 1em;
+  top: 0;
+  height: 3em;
+  line-height: 3em;
+  cursor: default;
+}
+#header h1 a {
+  font-size: 1.25em;
+}
+#header h1 img {
+  padding-top: 0.5em;
+  width: 180px;
+}
+#header nav {
+  position: absolute;
+  right: 0.5em;
+  top: 0;
+  height: 3em;
+  line-height: 3em;
+}
+#header nav#drawer {
+  display: none;
+}
+
+
 /* コンテナ */
 .container {
   max-width: 1200px;

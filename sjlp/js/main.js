@@ -213,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimation();
     initSmoothScroll();
     optimizeScroll();
-    initContactButtons();
 
     // ページ読み込み完了後の最適化
     window.addEventListener('load', () => {
@@ -221,13 +220,3 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.opacity = '1';
     });
 });
-
-// メールフォーム設定（シンプル版）
-function initContactButtons() {
-    const mailtoLink = 'mailto:contact@sakejpn.co.jp?subject=デザイン制作の無料相談【株式会社SAKE JAPAN】';
-
-    const ctaButtons = document.querySelectorAll('#cta-contact-1, #cta-contact-2');
-    ctaButtons.forEach(button => {
-        button.href = mailtoLink;
-    });
-}
