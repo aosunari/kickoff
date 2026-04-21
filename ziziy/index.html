@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社 ZiZiy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+     NAVIGATION
+     追加方法: <ul class="nav-links"> 内に <li><a href="#id">ページ名</a></li> を追加
+============================================================ -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav-logo">
+        <img src="./img/sample_logo.png" alt="株式会社 ZiZiy" class="nav-logo-img">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#philosophy">企業理念</a></li>
+        <li><a href="#services">事業内容</a></li>
+        <li><a href="#work">業務実績</a></li>
+        <li><a href="#company">会社情報</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+      <!-- ハンバーガーボタン (SP表示) -->
+      <button class="nav-hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- SP ドロワーメニュー -->
+  <div class="nav-drawer" id="drawer">
+    <a href="#philosophy" class="drawer-link">企業理念</a>
+    <a href="#services" class="drawer-link">事業内容</a>
+    <a href="#work" class="drawer-link">業務実績</a>
+    <a href="#company" class="drawer-link">会社情報</a>
+    <a href="#contact" class="drawer-link">お問い合わせ</a>
+  </div>
+
+
+  <!-- ============================================================
+     HERO
+     背景: --c-hero-bg の色か、background-image で写真を設定
+============================================================ -->
+  <section class="hero" id="top">
+    <img src="./img/kv_bg.png" alt="" class="hero-bg-img">
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">ZiZiy Inc. — Digital Strategy &amp; Creative</p>
+      <h1 class="hero-title">
+        情報と戦略で、ビジネスを加速する。<br>
+        届けるだけじゃない、その先へ。
+      </h1>
+      <div class="hero-logo-mark">
+        <img src="./img/sample_logo.png" alt="株式会社 ZiZiy" class="hero-logo-img">
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      scroll
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     企業理念
+     追加方法: .philosophy-grid 内に .philosophy-card ブロックを追加
+============================================================ -->
+  <section class="section philosophy" id="philosophy">
+    <div class="container">
+      <p class="section-label reveal">Philosophy</p>
+      <h2 class="section-title reveal">企業理念</h2>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-card reveal reveal-delay-1">
+          <div class="philosophy-card-num">01</div>
+          <h3 class="philosophy-card-title">情報で、可能性を拓く</h3>
+          <p class="philosophy-card-text">
+            正確な情報と深い洞察が、ビジネスの可能性を広げます。
+            私たちは常に最前線の情報を届け、お客様の意思決定を支えます。
+          </p>
+        </div>
+        <div class="philosophy-card reveal reveal-delay-2">
+          <div class="philosophy-card-num">02</div>
+          <h3 class="philosophy-card-title">戦略で、成果を生み出す</h3>
+          <p class="philosophy-card-text">
+            デジタルとリアルを融合した戦略設計で、
+            単なる「届ける」を超え、確かな成果へとつなげます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     事業内容 / SERVICES
+     追加方法: .services-grid 内に .service-card ブロックをコピーして追加
+============================================================ -->
+  <section class="section services" id="services">
+    <div class="container">
+      <p class="section-label reveal">Services</p>
+      <h2 class="section-title reveal">事業内容</h2>
+
+      <div class="services-grid">
+
+        <!-- ▼ サービスカード 1 -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <h3 class="service-card-title">広告制作</h3>
+          <p class="service-card-text">ターゲットに響くクリエイティブ広告を企画・制作。Web・SNS・紙媒体まで幅広く対応します。</p>
+        </div>
+
+        <!-- ▼ サービスカード 2 -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+          <h3 class="service-card-title">LINE 自動返信ツール開発</h3>
+          <p class="service-card-text">LINE公式アカウントの自動返信・シナリオ配信ツールを開発。顧客対応の効率化を実現します。</p>
+        </div>
+
+        <!-- ▼ サービスカード 3 -->
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h3 class="service-card-title">ホームページ制作</h3>
+          <p class="service-card-text">戦略的なUI/UXデザインと高速表示にこだわったWebサイトを制作。集客・コンバージョン改善まで支援します。</p>
+        </div>
+
+        <!-- ▼ サービスカード 4 -->
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <polygon points="23 7 16 12 23 17 23 7" />
+              <rect x="1" y="5" width="15" height="14" rx="2" />
+            </svg>
+          </div>
+          <h3 class="service-card-title">動画編集</h3>
+          <p class="service-card-text">SNS・YouTube・CM用の動画を企画から編集まで一貫対応。ブランドの世界観を映像で表現します。</p>
+        </div>
+
+        <!-- ▼▼▼ サービス追加はここにコピー ▼▼▼
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24">...</svg>
+        </div>
+        <h3 class="service-card-title">新サービス名</h3>
+        <p class="service-card-text">説明文</p>
+      </div>
+      ▲▲▲ ここまで ▲▲▲ -->
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     WORK / 実績
+     追加方法: .work-grid 内に .work-card ブロックをコピーして追加
+     実績が揃うまで section を display:none にしても OK
+============================================================ -->
+  <section class="section work" id="work">
+    <div class="container">
+      <p class="section-label reveal">業務実績</p>
+      <h2 class="section-title reveal">実績</h2>
+
+      <div class="work-grid">
+
+        <!-- ▼ 実績カード 1 -->
+        <div class="work-card reveal reveal-delay-1">
+          <div class="work-card-placeholder">AD</div>
+          <!-- 画像がある場合: <img class="work-card-img" src="images/work01.jpg" alt=""> -->
+          <div class="work-card-body">
+            <p class="work-card-tag">広告制作</p>
+            <p class="work-card-title">サンプルプロジェクト A</p>
+          </div>
+        </div>
+
+        <!-- ▼ 実績カード 2 -->
+        <div class="work-card reveal reveal-delay-2">
+          <div class="work-card-placeholder">WEB</div>
+          <div class="work-card-body">
+            <p class="work-card-tag">ホームページ制作</p>
+            <p class="work-card-title">サンプルプロジェクト B</p>
+          </div>
+        </div>
+
+        <!-- ▼ 実績カード 3 -->
+        <div class="work-card reveal reveal-delay-3">
+          <div class="work-card-placeholder">MOV</div>
+          <div class="work-card-body">
+            <p class="work-card-tag">動画編集</p>
+            <p class="work-card-title">サンプルプロジェクト C</p>
+          </div>
+        </div>
+
+        <!-- ▼▼▼ 実績追加はここにコピー ▼▼▼
+      <div class="work-card reveal">
+        <img class="work-card-img" src="images/workXX.jpg" alt="">
+        <div class="work-card-body">
+          <p class="work-card-tag">カテゴリ</p>
+          <p class="work-card-title">プロジェクト名</p>
+        </div>
+      </div>
+      ▲▲▲ ここまで ▲▲▲ -->
+
+      </div>
+
+      <div class="work-cta reveal">
+        <a href="#contact" class="btn-outline">お仕事のご依頼はこちら</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     会社情報
+     追加方法: .company-table に <tr> を追加
+============================================================ -->
+  <section class="section company" id="company">
+    <div class="container">
+      <p class="section-label reveal">Company</p>
+      <h2 class="section-title reveal">会社情報</h2>
+
+      <div class="company-inner">
+        <table class="company-table reveal">
+          <tr>
+            <td>社名</td>
+            <td>株式会社 ZiZiy</td>
+          </tr>
+          <tr>
+            <td>事業内容</td>
+            <td>
+              1.情報通 業及び情報提供サービス業<br>
+              2.インターネット、モバイルその他の通 を利用した各種情報提供サービス 並びに通言販売業<br>
+              3.Webマーケティング及びコンサルティング業並びに広告業<br>
+              4.前各号に付帯する一切の業務
+            </td>
+          </tr>
+          <tr>
+            <td>所在地</td>
+            <td>〒101-0032<br>東京都千代田区岩本町一丁目5番5号</td>
+          </tr>
+          <tr>
+            <td>設立</td>
+            <td>2024年6月</td>
+          </tr>
+          <tr>
+            <td>代表者</td>
+            <td>代表取締役　岸本 利隆</td>
+          </tr>
+        </table>
+
+        <div class="reveal reveal-delay-1">
+          <div class="company-map">
+            <p class="company-map-placeholder"><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.3867649303484!2d139.7768633!3d35.6920989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188eab72f503f7%3A0xa5eb23387dc05936!2z44CSMTAxLTAwMzIg5p2x5Lqs6YO95Y2D5Luj55Sw5Yy65bKp5pys55S677yR5LiB55uu77yV4oiS77yVIOWPuOazleODk-ODqw!5e0!3m2!1sja!2sjp!4v1776668358040!5m2!1sja!2sjp"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+            <!-- Google Maps embed:
+          <iframe src="https://maps.google.com/maps?q=...&output=embed"
+            width="100%" height="260" style="border:0;" allowfullscreen loading="lazy"></iframe>
+          -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     お問い合わせ
+============================================================ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <p class="section-label reveal" style="text-align:center;">Contact</p>
+      <h2 class="section-title reveal" style="text-align:center;">お問い合わせ</h2>
+
+      <div class="contact-inner">
+        <p class="contact-intro reveal">
+          ご依頼・ご相談はお気軽にどうぞ。<br>
+          担当者より2営業日以内にご連絡いたします。
+        </p>
+
+        <form class="reveal" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">お名前 *</label>
+              <input class="form-input" type="text" placeholder="山田 太郎">
+            </div>
+            <div class="form-group">
+              <label class="form-label">会社名</label>
+              <input class="form-input" type="text" placeholder="株式会社〇〇">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">メールアドレス *</label>
+            <input class="form-input" type="email" placeholder="info@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">お問い合わせ内容 *</label>
+            <textarea class="form-textarea" placeholder="ご依頼内容やご質問をご記入ください。"></textarea>
+          </div>
+          <button class="btn-primary" type="submit">送信する</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     FOOTER
+============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="./img/sample_logo.png" alt="株式会社 ZiZiy" class="footer-logo-img">
+        </div>
+        <ul class="footer-links">
+          <li><a href="#philosophy">企業理念</a></li>
+          <li><a href="#services">事業内容</a></li>
+          <li><a href="#work">業務実績</a></li>
+          <li><a href="#company">会社情報</a></li>
+          <li class="span-full"><a href="#contact">お問い合わせ</a></li>
+        </ul>
+        <p class="footer-copy">© 2026 ZiZiy Inc. All rights reserved.</p>
+      </div>
+  </footer>
+
+
+  <!-- ============================================================
+     SCROLL REVEAL JS
+============================================================ -->
+  <script src="main.js"></script>
+
+</body>
+
+</html>

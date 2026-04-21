@@ -1,0 +1,227 @@
+/* SP専用要素: PC では非表示 */
+.sp-only { display: none; }
+
+/* ============================================================
+     HAMBURGER MENU (SP)
+  ============================================================ */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px; height: 36px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 200;
+  }
+  .nav-hamburger span {
+    display: block;
+    height: 1.5px;
+    background: var(--c-ink);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+    transform-origin: center;
+  }
+  .nav-hamburger span:nth-child(2) { width: 70%; margin-left: auto; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* SP ドロワー */
+  .nav-drawer {
+    display: none;
+    position: fixed;
+    top: var(--nav-h); left: 0; right: 0; bottom: 0;
+    background: rgba(244,242,238,0.97);
+    backdrop-filter: blur(16px);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .nav-drawer.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .nav-drawer a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--c-ink);
+    border-bottom: 1px solid var(--c-border);
+    transform: translateY(12px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease, color 0.2s;
+  }
+  .nav-drawer.open a {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .nav-drawer.open a:nth-child(1) { transition-delay: 0.05s; }
+  .nav-drawer.open a:nth-child(2) { transition-delay: 0.10s; }
+  .nav-drawer.open a:nth-child(3) { transition-delay: 0.15s; }
+  .nav-drawer.open a:nth-child(4) { transition-delay: 0.20s; }
+  .nav-drawer.open a:nth-child(5) { transition-delay: 0.25s; }
+  .nav-drawer a:hover { color: var(--c-accent); }
+
+  /* ============================================================
+     RESPONSIVE — TABLET (≤ 768px)
+  ============================================================ */
+  @media (max-width: 768px) {
+    :root {
+      --nav-h: 56px;
+      --section-py: 64px;
+    }
+
+    /* SP only 要素 */
+    .sp-only { display: block; }
+
+    /* ロゴ */
+    .nav-logo-img { height: 22px; }
+    .hero-logo-img { height: 28px; }
+
+    /* Nav */
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-drawer { display: flex; }
+
+    /* Hero */
+    .hero-title { font-size: 18px; line-height: 1.7; }
+    .hero-eyebrow { letter-spacing: 0.12em; font-size: 10px; }
+
+    /* 企業理念 */
+    .philosophy-grid {
+      grid-template-columns: 1fr;
+    }
+    .philosophy-card + .philosophy-card {
+      border-left: none;
+      border-top: 2px solid var(--c-ink);
+    }
+    .philosophy-card { padding: 28px 24px; }
+
+    /* 事業内容 */
+    .services-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* WORK */
+    .work-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* 会社情報 */
+    .company-inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .company-map { height: 220px; }
+
+    /* フォーム */
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+
+    /* Footer */
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      width: 100%;
+    }
+    .footer-links li a {
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-links .span-full { grid-column: 1 / -1; }
+    .footer-links .span-full a { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-copy { width: 100%; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+  }
+
+  /* ============================================================
+     RESPONSIVE — MOBILE (≤ 480px)
+  ============================================================ */
+  @media (max-width: 480px) {
+    :root { --section-py: 52px; }
+
+    .container { padding: 0 20px; }
+
+    /* Hero */
+    .hero-title {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .hero-scroll { display: none; }
+
+    /* Section title */
+    .section-title { margin-bottom: 28px; }
+
+    /* 企業理念 */
+    .philosophy-card { padding: 24px 20px; }
+    .philosophy-card-num { font-size: 48px; }
+
+    /* 事業内容 — 1列 */
+    .services-grid { grid-template-columns: 1fr; gap: 10px; }
+    .service-card { padding: 24px 20px; }
+
+    /* WORK — 1列 */
+    .work-grid { grid-template-columns: 1fr; gap: 2px; }
+    .work-card { aspect-ratio: 16/9; }
+
+    /* 会社情報 テーブル */
+    .company-table td:first-child { width: 80px; font-size: 11px; }
+    .company-table td { font-size: 13px; padding: 13px 0; }
+
+    /* Footer */
+    .footer-links { gap: 0; }
+    .footer-copy { font-size: 11px; }
+  }
+
+  /* ============================================================
+     FOOTER
+  ============================================================ */
+  .footer {
+    background: var(--c-ink);
+    color: rgba(255,255,255,0.45);
+    padding: 40px 0;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-logo {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+  .footer-logo-icon {
+    width: 16px; height: 16px;
+    background: rgba(255,255,255,0.7);
+    clip-path: polygon(0 0, 58% 0, 100% 100%, 42% 100%);
+  }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+  .footer-copy { font-size: 12px; }
