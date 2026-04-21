@@ -301,11 +301,6 @@
     padding-right: 0;
   }
 
-  .company-map iframe {
-    width: 100% !important;
-    height: 100%;
-  }
-
   /* Footer */
   .footer-links {
     gap: 0;
