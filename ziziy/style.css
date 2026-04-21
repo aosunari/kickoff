@@ -203,7 +203,7 @@ a {
 }
 /* テキスト可読性のためのオーバーレイ */
 .hero::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -214,8 +214,12 @@ a {
   );
   z-index: 1;
 }
-.hero-content { z-index: 2; }
-.hero-scroll  { z-index: 2; }
+.hero-content {
+  z-index: 2;
+}
+.hero-scroll {
+  z-index: 2;
+}
 .hero-content {
   position: relative;
   text-align: center;
@@ -516,10 +520,12 @@ a {
   grid-template-columns: 1fr 420px;
   gap: 64px;
   align-items: start;
+  overflow: hidden
 }
 .company-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 .company-table tr {
   border-bottom: 1px solid var(--c-border);
@@ -528,6 +534,8 @@ a {
   padding: 16px 0;
   vertical-align: top;
   font-size: 14px;
+  overflow-wrap: break-word;
+  word-break: break-all
 }
 .company-table td:first-child {
   width: 120px;
