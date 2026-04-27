@@ -339,7 +339,7 @@ a {
 .philosophy-card-num {
   font-family: var(--f-display);
   font-size: 64px;
-  color: rgba(24, 24, 26, 0.08);
+  color: rgba(16, 52, 103, 0.109);
   line-height: 1;
   margin-bottom: 12px;
 }
@@ -416,6 +416,7 @@ a {
      → This entire section can be toggled visible/hidden easily
   ============================================================ */
 .work {
+  display: none;
   background: var(--c-ink);
 }
 .work .section-label {
@@ -663,4 +664,14 @@ a {
   object-fit: contain;
   filter: brightness(0) invert(1); /* 黒ロゴ → 白に反転 */
   opacity: 0.75;
+}
+
+
+.footer-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
 }
