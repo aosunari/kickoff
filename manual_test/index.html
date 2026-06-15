@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LINE Messaging API 管理ツール使用マニュアル</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+
+<body>
+
+  <!-- =====================
+     ヘッダー
+===================== -->
+  <div class="header">
+    <div class="header-title">LINE Messaging API送受信専用管理ツール　使用マニュアル</div>
+    <div class="header-logo">株式会社 ZiZiy</div>
+  </div>
+
+  <!-- =====================
+     ヒーロー
+===================== -->
+  <div class="hero">
+    <div class="hero-label">Manual</div>
+    <div class="hero-title">ツール画面の仕様</div>
+    <div class="hero-sub">管理画面の各機能について、設定方法と項目の詳細を説明します。</div>
+  </div>
+
+
+  <!-- =====================
+     BOT管理
+===================== -->
+  <div class="section">
+    <div class="section-title">BOT管理</div>
+    <div class="section-desc">BOT作成後、制御に関する項目を管理します。上部ナビメニュー「BOT管理」から選択してください。</div>
+
+    <!-- ツール画面の構成 -->
+    <div class="detail-card">
+      <div class="detail-header">
+        <div class="detail-header-icon"><i class="ti ti-layout-sidebar"></i></div>
+        <div class="detail-header-text">
+          <h3>ツール画面の構成</h3>
+          <p>管理画面の各エリアと役割</p>
+        </div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-left">
+          <div class="field-label" style="margin-bottom: 10px;"><i class="ti ti-device-desktop"></i> 実際のツール画面</div>
+
+          <div class="screenshot-wrap">
+            <img src="./image/bot_TOOLscreen.png" alt="ツール管理画面のスクリーンショット（ホームタブ）" />
+          </div>
+          <div class="screenshot-caption">▲ 実際の管理画面（ホームタブ）<br>※今後の改良により、画面構成は変化する可能性があります。</div>
+        </div>
+        <div class="detail-right">
+          <div class="field-group">
+            <div class="field-label"><i class="ti ti-layout-navbar"></i> ナビメニュー</div>
+            <div class="field-desc">画面上部のタブ（ホーム | BOT管理 | テンプレート管理 | 送受信履歴）で各機能へ移動できます。</div>
+          </div>
+          <div class="field-group">
+            <div class="field-label"><i class="ti ti-layout-sidebar"></i> 左サイドバー：BOT一覧</div>
+            <div class="field-desc">登録済みのBOTが一覧表示されます。枠の色で有効・無効を確認できます。</div>
+            <div style="margin-top: 10px;">
+              <div class="bot-list">
+                <img src="./image/bot_green.png" alt="">
+                <img src="./image/bot_red.png" alt="">
+
+              </div>
+              <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 4px;">
+                <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: #5f5e5a;">
+                  <div
+                    style="width: 10px; height: 10px; border-radius: 2px; border: 1.5px solid #1D9E75; background: #E1F5EE; flex-shrink:0;">
+                  </div>
+                  緑枠：有効なBOT
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: #5f5e5a;">
+                  <div
+                    style="width: 10px; height: 10px; border-radius: 2px; border: 1.5px solid #E24B4A; background: #FCEBEB; flex-shrink:0;">
+                  </div>
+                  赤枠：無効なBOT（要確認）
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="note-box">
+            <i class="ti ti-alert-triangle"></i>
+            <div>@ボットIDが表示されていない場合は登録不備の可能性があります。チャネルシークレットとチャネルアクセストークンをご確認ください。</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 基本設定 -->
+    <div class="detail-card">
+      <div class="detail-header">
+        <div class="detail-header-icon"><i class="ti ti-robot"></i></div>
+        <div class="detail-header-text">
+          <h3>基本設定</h3>
+          <p>設定後は必ず「保存」を押して反映させてください</p>
+        </div>
+      </div>
+      <div class="detail-full">
+        <table class="field-table">
+          <thead>
+            <tr>
+              <th>項目名</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BOT NAME</td>
+              <td>管理画面上に表示されるBOTの名前です。</td>
+            </tr>
+            <tr>
+              <td>チャネルシークレット<span class="req-badge">必須</span></td>
+              <td>LINE Developersの「チャネル基本設定」にある項目です。</td>
+            </tr>
+            <tr>
+              <td>チャネルアクセストークン<span class="req-badge">必須</span></td>
+              <td>LINE Developersの「Messaging API設定」にある項目です。</td>
+            </tr>
+            <tr>
+              <td>Webhook URL</td>
+              <td>LINE Developersの「Messaging API設定」に設定するURLです。最大文字数は2000文字です。</td>
+            </tr>
+            <tr>
+              <td>メモ(任意)</td>
+              <td>メモ欄です。ご自由にお使いください。最大文字数は2000文字です。</td>
+            </tr>
+            <tr>
+              <td>追送信</td>
+              <td>一定時間ユーザから返信が無かった場合に、追送信するかどうかの項目です。</td>
+            </tr>
+            <tr>
+              <td>追送信時間</td>
+              <td>上記追送信がONの場合に、何分返信が無かったら追送信するかの項目です。単位は分です。</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="note-box">
+          <i class="ti ti-alert-triangle"></i>
+          <div>ボットIDが取得できていない場合や管理者権限がない場合は管理できません。チャネルシークレット・チャネルアクセストークンはLINE Official Account Managerを使用してください。</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- =====================
+     3タイプ概要
+===================== -->
+  <div class="section">
+    <div class="section-title">3種類のLINE BOTで設定可能</div>
+    <div class="section-desc">用途に合わせて3つのタイプから選択できます。テンプレートメッセージの最大文字数はいずれも140文字です。</div>
+
+    <div class="type-grid">
+
+      <!-- CHAT TYPE -->
+      <div class="type-hero-card">
+        <div class="type-hero-header">
+          <div class="type-badge">チャットタイプ</div>
+          <div class="type-name">CHAT TYPE<i class="ti ti-message-2" style="font-size:35px; color:#1da1a1;"></i></div>
+          <div class="type-tagline">ユーザからキャラにメッセージが送られると、
+            指定した時間後にメッセージを返信する方式です。</div>
+        </div>
+        <div class="type-hero-body">
+          <div class="type-hero-img">
+            <img src="./image/type_chat.png" alt="">
+          </div>
+          <div class="type-point">ユーザーのメッセージにキーワードで自動返信</div>
+          <div class="type-point">ランダム配信・固定メッセージ切り替え可能</div>
+          <div class="type-point">LINE OA Managerとの共存に対応</div>
+        </div>
+      </div>
+
+      <!-- SELECT TYPE -->
+      <div class="type-hero-card">
+        <div class="type-hero-header">
+          <div class="type-badge">セレクトタイプ</div>
+          <div class="type-name">SELECT TYPE<i class="ti ti-list-check" style="font-size:35px; color:#1da1a1;"></i>
+          </div>
+          <div class="type-tagline">ユーザに選択肢を選んでもらってやりとりを進める方式です。</div>
+        </div>
+        <div class="type-hero-body">
+          <div class="type-hero-img">
+            <img src="./image/type_select.png" alt="">
+          </div>
+          <div class="type-point">最大4つの選択肢ボタンを表示</div>
+          <div class="type-point">各ランクにテキスト・画像・リンクを設定</div>
+          <div class="type-point">初回メッセージの自動送信に対応</div>
+        </div>
+      </div>
+
+      <!-- CARD TYPE -->
+      <div class="type-hero-card">
+        <div class="type-hero-header">
+          <div class="type-badge">カードタイプ</div>
+          <div class="type-name">CARD TYPE<i class="ti ti-layout-cards" style="font-size:35px; color:#1da1a1;"></i>
+          </div>
+          <div class="type-tagline">予約送信で2タイプの画像をテンプレートとして送信する方式です。
+            セレクトタイプと同様のテンプレート送信も可能です。</div>
+        </div>
+        <div class="type-hero-body">
+          <div class="type-hero-img">
+            <img src="./image/type_card.png" alt="">
+          </div>
+          <div class="type-point">画像・タイトル・説明・ボタンをカードで表示</div>
+          <div class="type-point">複数枚のカードをまとめて配信可能</div>
+          <div class="type-point">プレビューで見た目を確認しながら設定</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- =====================
+     各TYPEのテンプレート編集
+===================== -->
+  <div class="section">
+    <div class="section-title">各TYPEのテンプレート編集</div>
+    <div class="section-desc">タイプごとに設定内容が異なります。各項目の詳細と表示イメージを確認してください。</div>
+
+    <!-- CHAT TYPE -->
+    <div class="detail-card">
+      <div class="detail-header">
+        <div class="detail-header-icon"><i class="ti ti-message-2"></i></div>
+        <div class="detail-header-text">
+          <h3>CHAT TYPE — チャットタイプ</h3>
+          <p>キーワード自動応答・ランダム配信が可能なチャット形式</p>
+        </div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-left">
+          <div class="field-group">
+            <div class="field-label"><i class="ti ti-settings"></i> 配信設定</div>
+            <table class="field-table">
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th>内容</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>返信ランダム時間</td>
+                  <td>返信時間からさらにランダムで何秒追加するかの項目です。0～指定秒数のランダム時間を追加します。有効範囲は0～99秒です。</td>
+                </tr>
+                <tr>
+                  <td>追送</td>
+                  <td>一定時間ユーザから返信が無かった場合に再度メッセージを送る項目です。
+                    BOT管理で、追送信チェックをONにした場合に動作します。最大文字数は2000文字です。</td>
+                </tr>
+                <tr>
+                  <td>添付画像</td>
+                  <td>1通の返信で送れるのは3枚までです。返信メッセージ送信後、それぞれの送信待ち(秒)後に画像を送信します。
+                    有効ファイルはjpg, pngのみです。ファイルサイズは10MBまでです。
+                  </td>
+                </tr>
+                <tr>
+                  <td>削除ボタン<img class="iconmask" src="./image/Data_Delete.png" alt=""></td>
+                  <td>各◯通目ごとに削除が可能です。
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="field-group">
+            <div class="field-label"><i class="ti ti-key"></i> キーワード設定</div>
+            <div class="field-desc">
+              <span class="on-badge"><i class="ti ti-toggle-right" style="font-size:11px;"></i>
+                ON</span>　返信までは行い、それ以降の追送および次通の返信を行いません。<br>
+              <span class="off-badge">OFF</span>　返信が一定時間返ってこない場合は追送を行います。<br><br>
+              <span>NGキーワード</span>　返信を停止するワードを設定できます。各返信メッセージに設定が可能です。
+            </div>
+          </div>
+          <div class="field-group">
+            <div class="field-label"><i class="ti ti-template"></i> テンプレート</div>
+            <div class="field-desc">各BOTのテンプレートに応じて設定済みのカテゴリを選択します。最大選択数はカテゴリのテンプレート数に依存します。</div>
+          </div>
+          <div class="field-desc">
+            <span class="off-badge">＞複製</span>　他BOTのテンプレートをコピーします。現在選択中のBOTのテンプレートは上書きされます。
+            <span class="off-badge">＞追加</span>　現在選択中のBOTのテンプレートに任意の通数分テンプレートを追加します。最大通数は50通です。
+          </div>
+        </div>
+        <div class="detail-right">
+          <div class="field-label" style="margin-bottom: 10px;"><i class="ti ti-device-desktop"></i> 管理画面イメージ</div>
+          <div class="screenshot-tool-wrap">
+            <img src="./image/chat_toool.png" alt="ツール管理画面のスクリーンショット（チャットタイプ）" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SELECT TYPE -->
+    <div class="detail-card">
+      <div class="detail-header">
+        <div class="detail-header-icon"><i class="ti ti-list-check"></i></div>
+        <div class="detail-header-text">
+          <h3>SELECT TYPE — セレクトタイプ</h3>
+          <p>最大4つのボタン選択肢でユーザーを誘導する形式</p>
+        </div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-left">
+          <div class="field-group">
+            <div class="field-label"><i class="ti ti-settings"></i> 全体設定</div>
+            <table class="field-table">
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th>内容</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>検索ワードが見つからなかったときに表示する質問内容</td>
+                  <td>初回のメッセージテキストです。もしくは該当キーワードがなかった場合に「質問文*」に表示する内容を決められます。</td>
+                </tr>
+                <tr>
+                  <td>質問文<span class="req-badge">必須</span></td>
+                  <td>選択画面と共に表示されるタイトルになります。</td>
+                </tr>
+                <tr>
+                  <td>回答1~4</td>
+                  <td>最大4つまで作成可能なユーザーが選択する回答ワードを設定します。最大文字数は15文字です。
+                    空欄の場合は選択肢に表示されません。</td>
+                </tr>
+                <tr>
+                  <td>リンク1~4</td>
+                  <td>リンク先URLを設定します。最大文字数は50文字です。
+                    ユーザのタップでブラウザが起動します。
+                    （答えとリンクの両方に記入した場合は、答え欄の文字列でリンクするようになります。）</td>
+                </tr>
+                <tr>
+                  <td>画像埋め込みURL</td>
+                  <td>URLのみは作動しないため画像を添付してください。</td>
+                </tr>
+                <tr>
+                  <td>以下の質問を表示するための検索ワード(各選択肢への返信)</td>
+                  <td>ユーザーの選択した回答に対しての返信をそれぞれ作成できます。
+                    質問と回答を続けたい場合は継続して回答を作成していき、リンクへ繋げたい場合は任意の回答でご案内へ進めてください。</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <!-- <div class="field-group">
+            <div class="field-label"><i class="ti ti-number"></i> ランク設定（1〜4）</div>
+            <table class="field-table">
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th>内容</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ランクテキスト</td>
+                  <td>ボタンに表示するラベル。最大20文字。</td>
+                </tr>
+                <tr>
+                  <td>リンクURL</td>
+                  <td>ボタンタップ時の遷移先URL。</td>
+                </tr>
+                <tr>
+                  <td>画像URL</td>
+                  <td>各ランクに対応するサムネイル画像のURL。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div> -->
+          <div class="note-box">
+            <i class="ti ti-alert-triangle"></i>
+            <div>画像URLの末尾に「（空白）1」などの文字が入らないようにご注意ください。</div>
+          </div>
+          <div class="field-group">
+            <div class="field-label" style="margin-bottom: 10px;"><i class="ti ti-device-mobile"></i> LINE表示イメージ</div>
+          </div>
+          <div class="screenshot-tool-wrap">
+            <img src="./image/mobilesample.png" alt="ツール管理画面のスクリーンショット（セレクトタイプ）" />
+          </div>
+        </div>
+        <div class="detail-right">
+          <div class="field-label" style="margin-bottom: 10px;"><i class="ti ti-device-desktop"></i> 管理画面イメージ</div>
+          <div class="screenshot-tool-wrap">
+            <img src="./image/select_toool.png" alt="ツール管理画面のスクリーンショット（セレクトタイプ）" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD TYPE -->
+    <div class="detail-card">
+      <div class="detail-header">
+        <div class="detail-header-icon"><i class="ti ti-layout-cards"></i></div>
+        <div class="detail-header-text">
+          <h3>CARD TYPE — カード型</h3>
+          <p>画像・テキスト・ボタンを組み合わせたカード形式</p>
+        </div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-left">
+          <div class="field-group">
+            <div class="field-label"><i class="ti ti-photo"></i> プレビュー</div>
+            <div class="field-desc">管理画面の右側にプレビューが表示されます。</div>
+          </div>
+          <div class="field-group">
+            <div class="field-label"><i class="ti ti-cards"></i> [パーソン][イメージ]の2種類からカード投稿が可能です。</div>
+            <table class="field-table">
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th>内容</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>送信画像<span class="req-badge">必須</span></td>
+                  <td>アイコンまたはイメージとして使用する画像を選択してください。</td>
+                </tr>
+                <tr>
+                  <td>送信メッセージ<span class="req-badge">必須</span></td>
+                  <td>カードと合わせて送信されるメッセージを入力します。</td>
+                </tr>
+                <tr>
+                  <td>[パーソン]</td>
+                  <td>ユーザーを紹介しているような形式でメッセージが送信されるタイプです。
+                    アイコンになる画像、名前、一言のコメントを設定できます。
+                    リンクボタンのテキストも自由に決められます。
+                    「友だち追加はこちらから」「キミに決めた！」等オリジナルでボタンが作成できます。
+                  </td>
+                </tr>
+                <tr>
+                  <td>[カード]</td>
+                  <td>画像とリンクボタンのみで送信されるメッセージです。画像は四角形で切り取られます。<br>
+                    横長・縦長にも切り取り可能なので好みの拡大縮小、調整をして設定してください。<br>
+                    一度追加した画像を削除したい場合は別の画像を添付するか、クリア欄のチェックをつけてから保存操作を行うと削除されます。
+                  </td>
+                </tr>
+                <tr>
+                  <td>ボタン</td>
+                  <td>タップ時の遷移先URLとラベルテキストを設定。<br>
+                    ボタン化のON/OFFを切り替えると文字のみかボタン枠が切り替わります。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- <div class="note-box info">
+            <i class="ti ti-info-circle"></i>
+            <div>カードは複数枚まとめて配信できます。表示速度の観点から10枚以内を推奨します。</div>
+          </div> -->
+        </div>
+        <div class="detail-right">
+          <div class="field-label" style="margin-bottom: 10px;"><i class="ti ti-device-mobile"></i> LINE表示イメージ</div>
+          <div class="screenshot-tool-wrap">
+            <img src="./image/card_04.png" alt="ツール管理画面のスクリーンショット（チャットタイプ）" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- テンプレート管理 -->
+    <div class="detail-card">
+      <div class="detail-header">
+        <div class="detail-header-icon"><i class="ti ti-manual-gearbox"></i></div>
+        <div class="detail-header-text">
+          <h3>テンプレート管理</h3>
+          <p>この機能では、テンプレートを親子構造で管理できます。</p>
+        </div>
+      </div>
+      <div class="detail-full">
+        <table class="field-table">
+          <thead>
+            <tr>
+              <th>項目名</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>マスター(親)テンプレート</td>
+              <td>・共通設定を持つテンプレート<br>
+                ・複数のBOTから参照される</td>
+            </tr>
+            <tr>
+              <td>クローン（子）テンプレート</td>
+              <td>・マスターを参照して動作<br>
+                ・テンプレートは親から引き継がれ、編集不可</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="note-box">
+          <i class="ti ti-alert-triangle"></i>
+          <div>※現在はカードタイプの予約送信でのみ機能します。<br>
+            削除について： クローン（子）テンプレートが存在する場合、親の削除はできません。子をすべて削除してからであれば削除可能です。 </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- その他機能 -->
+    <div class="detail-card">
+      <div class="detail-header">
+        <div class="detail-header-icon"><i class="ti ti-history"></i></div>
+        <div class="detail-header-text">
+          <h3>その他機能</h3>
+          <p>今後も機能を追加・変更していく場合がございます。</p>
+        </div>
+      </div>
+      <div class="detail-full">
+        <table class="field-table">
+          <thead>
+            <tr>
+              <th>機能</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>送受信履歴</td>
+              <td>ボットとのやりとりの記録を確認できます。<br>
+                日付毎の一覧になっており、「Re:」がついているメッセージがボットの送信したメッセージです。<br>
+                画像の送信記録は保存されません。<br>
+                個別アイコンをクリックすると個別送信するための画面を開きます。対象のユーザ宛に即時個別送信が可能です。</td>
+            </tr>
+            <tr>
+              <td>予約送信※</td>
+              <td>ユーザが友達登録を行った時点を基準として、指定時間後にメッセージを送信します。<br>
+                返信の有無は関係なく、時間経過で送信を行います。<br>
+                送信形式はチャットタイプまたはセレクトタイプで選択可能です。<br>
+                予約時間は分単位で99999分まで設定可能です。(約69日)<br>
+                設定する時間はユーザが友達登録を行った時点を基準とするため、前のメッセージより短い時間を設定できません。また、間隔は3分以上空けてください。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+</body>
+
+</html>
